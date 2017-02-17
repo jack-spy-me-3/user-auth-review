@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :index
+  before_action :authenticate_admin!, only: [:new, :create]
 
   def index
     render "index.html.erb"
